@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+    app:
+        extends:
+            file: ../base.yml
+            service: app
+        container_name: portainer
+        image: portainer/portainer:latest
+        restart: always
+        ports:
+            - "9000:9000"

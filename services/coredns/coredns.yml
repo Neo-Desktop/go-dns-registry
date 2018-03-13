@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+    app:
+        extends:
+            file: ../base.yml
+            service: app
+        container_name: coredns
+        image: neobiscuit/docker-coredns-redis:testing
+        volumes:
+            - ./data:/data
+        restart: always
+        ports:
+            - "53:53/udp"
+            - "53:53/tcp"
+            - "5353:53/udp"
+            - "5353:53/tcp"
+            - "8082:8082/tcp"

@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+    app:
+        extends:
+            file: ../base.yml
+            service: app
+        container_name: redis-commander
+        image: rediscommander/redis-commander:latest
+        volumes:
+            - ./data:/data
+        restart: always
+        environment:
+            - REDIS_HOSTS=registry:redis:6379
+        ports:
+            - "8081:8081"

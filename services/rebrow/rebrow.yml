@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+    app:
+        extends:
+            file: ../base.yml
+            service: app
+        container_name: rebrow
+        image: marian/rebrow:latest
+        volumes:
+            - ./data:/data
+        restart: always
+        ports:
+            - "5001:5001"

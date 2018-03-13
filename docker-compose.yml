@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+    coredns:
+        extends:
+            file: services/coredns/coredns.yml
+            service: app
+
+    redis:
+        extends:
+            file: services/redis/redis.yml
+            service: app
+
+    portainer:
+        extends:
+            file: services/portainer/portainer.yml
+            service: app
+
+    rediscommander:
+        extends:
+            file: services/redis-commander/redis-commander.yml
+            service: app

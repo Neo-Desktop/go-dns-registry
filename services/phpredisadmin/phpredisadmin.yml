@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+    app:
+        extends:
+            file: ../base.yml
+            service: app
+        container_name: phpredisadmin
+        image: faktiva/php-redis-admin:latest
+        volumes:
+            - ./data/config:/app/config
+        restart: always
+        ports:
+            - "8010:80"

@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+    app:
+        extends:
+            file: ../base.yml
+            service: app
+        container_name: redis
+        image: redis:alpine
+        command: redis-server /data/redis.conf
+        volumes:
+            - ./data:/data
+        restart: always
+        ports:
+            - "6379:6379"
